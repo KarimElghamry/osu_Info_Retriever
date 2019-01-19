@@ -12,7 +12,11 @@ class Background extends StatelessWidget{
     final double screenHeight = MediaQuery.of(context).size.height;
     final double screenWidth = MediaQuery.of(context).size.width;
 
-    return Stack(
+    return ListView(
+      scrollDirection: Axis.vertical,
+      scroll
+      children: <Widget>[
+        Stack(
       children: <Widget>[
         Container(
           width: screenWidth,
@@ -38,6 +42,8 @@ class Background extends StatelessWidget{
             ),
           ),
         ),
+      ],
+    ),
       ],
     );
   }
