@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'background.dart';
+import 'osu!_api.dart';
 
 
 class HomeScreen extends StatefulWidget{
@@ -8,9 +9,21 @@ class HomeScreen extends StatefulWidget{
 }
 
 class _HomeScreenState extends State<HomeScreen>{
+  @override
+  final myController = TextEditingController();
+  void dispose() {
+  myController.dispose();
+  super.dispose();
+  }
+
+
+  @override
   Widget build(BuildContext context){
+    //screen aspects
     final double screenHeight = MediaQuery.of(context).size.height;
     final double screenWidth = MediaQuery.of(context).size.width;
+
+    //widgets
     return Scaffold(
       backgroundColor: Color(0xff212121),
       body: Stack(
@@ -42,8 +55,9 @@ class _HomeScreenState extends State<HomeScreen>{
                   Padding(
                     padding: EdgeInsets.only(right: 16.0,left: 16.0),
                     child: TextField(
+                      controller: myController,
                       decoration: InputDecoration(
-                        hintText: 'Enter your username',
+                      hintText: 'Enter your username',
                       ),
                     ),
                   ),
@@ -61,7 +75,7 @@ class _HomeScreenState extends State<HomeScreen>{
                     color: Colors.grey[800],
                     textColor: Colors.white,
                     elevation: 0.0,
-                    onPressed: () => setState(() => {}),
+                    onPressed: () => getData(myController.text),
                     shape: RoundedRectangleBorder(
                       borderRadius: BorderRadius.only(bottomLeft: Radius.circular(10.0),bottomRight:Radius.circular(10.0)),
                     ),
