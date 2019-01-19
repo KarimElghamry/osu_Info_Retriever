@@ -14,7 +14,7 @@ class Background extends StatelessWidget{
 
     return ListView(
       scrollDirection: Axis.vertical,
-      scroll
+      physics: ScrollPhysics(),
       children: <Widget>[
         Stack(
       children: <Widget>[
