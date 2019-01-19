@@ -4,4 +4,4 @@ An app made with Flutter framework to retrieve player's performace and display c
 
 ## screenshots
 Home Screen
-![osu! performance homescreen](https://imgur.com/PLczEYs)
+![osu! performance homescreen](https://i.imgur.com/PLczEYs.png)
