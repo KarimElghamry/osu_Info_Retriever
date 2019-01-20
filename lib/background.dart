@@ -21,7 +21,7 @@ class Background extends StatelessWidget{
       children: <Widget>[
         Container(
           width: screenWidth,
-          height: screenHeight/1.4,
+          height: screenHeight/1.57,
           decoration:BoxDecoration(
             color: Colors.white,
             borderRadius: BorderRadius.only(bottomLeft:Radius.circular(screenWidth)),
@@ -32,13 +32,13 @@ class Background extends StatelessWidget{
           alignment: Alignment(1.0, -1.0),
           child: Container(
             width: screenWidth/1.07,
-            height: screenHeight/1.5,
+            height: screenHeight/1.7,
             decoration:BoxDecoration(
               color: _inputColor,
               borderRadius: BorderRadius.only(bottomLeft:Radius.circular(screenWidth)),
             ),
             child:Padding(
-              padding: EdgeInsets.only(left: screenWidth/3.7,top: screenHeight/9.1),
+              padding: EdgeInsets.only(left: screenWidth/3.7,top: screenHeight/12),
               child: Text("osu!",style:TextStyle(fontFamily: "Aller",fontSize: (screenHeight+screenWidth)/9,color: Colors.white)),
             ),
           ),
