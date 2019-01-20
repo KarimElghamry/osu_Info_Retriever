@@ -10,5 +10,5 @@ An app made with Flutter framework to retrieve player's performace and display c
 
 <b>Stats Screen</b>
 
-<img src="https://imgur.com/a/TM0mwGV.png" width="450" height="800">
+<img src="https://i.imgur.com/MQrmoEV.png" width="450" height="800">
 
