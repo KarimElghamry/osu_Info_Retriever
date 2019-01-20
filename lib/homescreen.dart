@@ -148,7 +148,7 @@ class _HomeScreenState extends State<HomeScreen>{
               dialogBackgroundColor: Color(0xffED5DA1),
             ),
             child: AlertDialog(
-              title: Text("Error",style:TextStyle(fontFamily: "Aller",fontSize: 18.0,fontWeight: FontWeight.w400,color: Colors.white)),
+              title: Text("Error code 1",style:TextStyle(fontFamily: "Aller",fontSize: 18.0,fontWeight: FontWeight.w400,color: Colors.white)),
               content: Text("Enter a valid username.",style:TextStyle(fontFamily: "Aller",fontSize: 14.0,fontWeight: FontWeight.w400,color: Colors.white)),
             ),
           )
@@ -156,6 +156,21 @@ class _HomeScreenState extends State<HomeScreen>{
           return;
         }
         
+        if(widget._retrievedData[0]["playcount"] == null){
+          showDialog(context: context, 
+          builder: (BuildContext context) => Theme(
+            data: ThemeData(
+              dialogBackgroundColor: Color(0xffED5DA1),
+            ),
+            child: AlertDialog(
+              title: Text("Error code 2",style:TextStyle(fontFamily: "Aller",fontSize: 18.0,fontWeight: FontWeight.w400,color: Colors.white)),
+              content: Text("Insuffcient data. Player didn't play before.",style:TextStyle(fontFamily: "Aller",fontSize: 14.0,fontWeight: FontWeight.w400,color: Colors.white)),
+            ),
+          )
+        );
+          return;
+        }
+
         Navigator.push(context, MaterialPageRoute(builder: (context) => StatsScreen(widget._retrievedData[0])));
       });
   }

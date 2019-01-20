@@ -43,8 +43,8 @@ class StatsScreen extends StatelessWidget{
                   statDisplay(_playerData["playcount"], "Play Count"),
                   statDisplay(int.parse(_playerData["pp_rank"]).toString(), "PP Rank"),
                   statDisplay(double.parse(_playerData["accuracy"]).ceil().toString() + "%", "Accuracy"),
-                  statDisplay(_playerData["count_rank_s"], "S Count"),
-                  statDisplay(_playerData["count_rank_a"], "A Count"),
+                  statDisplay(_playerData["count_rank_ss"], "SS Plays"),
+                  statDisplay(_playerData["pp_raw"], "Raw PP"),
                 ],
             ),
           ),
@@ -53,33 +53,16 @@ class StatsScreen extends StatelessWidget{
           Divider(
             height: 13.0,
             color: Colors.transparent,
-          ), 
-
-          Center(
-            child: Text(
-            "Hit Count",
-            style:TextStyle(fontFamily: "Aller",fontSize: 28.0,fontWeight: FontWeight.w400,color: Colors.white)
-              ),
-          ),
-
-          Container(
-            child: HitCountChart(_playerData),
           ),
 
 
-          Row(
-            mainAxisAlignment: MainAxisAlignment.spaceEvenly,
-            children: <Widget>[
-              Legend(Color(0xffED5DA1), "300s"),
-              Legend(Color(0xff168A94), "100s"),
-              Legend(Color(0xffBFD8D1), "50s"),
-            ],
-          ),
+          HitCountPage(_playerData),
 
           Divider(
             height: 30.0,
             color: Colors.transparent,
           ),
+
         ],
       ),
     );
@@ -130,5 +113,32 @@ Widget statDisplay(String inputData,String dataTitle){
         ],
       )
     ),
+  );
+}
+
+Widget HitCountPage(var _playerData){
+  return Column(
+    children: <Widget>[
+      Center(
+            child: Text(
+            "Hit Count",
+            style:TextStyle(fontFamily: "Aller",fontSize: 28.0,fontWeight: FontWeight.w400,color: Colors.white)
+              ),
+          ),
+
+          Container(
+            child: HitCountChart(_playerData),
+          ),
+
+
+          Row(
+            mainAxisAlignment: MainAxisAlignment.spaceEvenly,
+            children: <Widget>[
+              Legend(Color(0xffED5DA1), "300s"),
+              Legend(Color(0xff168A94), "100s"),
+              Legend(Color(0xffBFD8D1), "50s"),
+            ],
+          ),
+    ],
   );
 }
