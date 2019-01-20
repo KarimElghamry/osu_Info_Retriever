@@ -155,8 +155,8 @@ class _HomeScreenState extends State<HomeScreen>{
         );
           return;
         }
-
-        Navigator.push(context, MaterialPageRoute(builder: (context) => StatsScreen(widget._retrievedData)));
+        
+        Navigator.push(context, MaterialPageRoute(builder: (context) => StatsScreen(widget._retrievedData[0])));
       });
   }
 }
