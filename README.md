@@ -4,7 +4,11 @@ An app made with Flutter framework to retrieve player's performace and display c
 
 ## screenshots
 
-Home Screen
+<b>Home Screen</b>
 
 <img src="https://i.imgur.com/PLczEYs.png" width="450" height="800">
+
+<b>Stats Screen</b>
+
+<img src="https://imgur.com/a/TM0mwGV.png" width="450" height="800">
 
