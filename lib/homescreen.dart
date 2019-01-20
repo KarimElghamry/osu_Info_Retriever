@@ -3,6 +3,7 @@ import 'background.dart';
 import 'package:http/http.dart' as http;
 import 'dart:async';
 import 'dart:convert';
+import 'statsscreen.dart';
 
 
 GlobalKey<ScaffoldState> _scaffoldKey = GlobalKey<ScaffoldState>();
@@ -130,6 +131,7 @@ class _HomeScreenState extends State<HomeScreen>{
             ),
             Divider(
               height: screenHeight/26,
+              color: Colors.transparent,
             ),
             Text("Fetching Data",style:TextStyle(fontFamily: "Aller",fontSize: 23.0,fontWeight: FontWeight.w400))
           ],
@@ -151,7 +153,10 @@ class _HomeScreenState extends State<HomeScreen>{
             ),
           )
         );
+          return;
         }
+
+        Navigator.push(context, MaterialPageRoute(builder: (context) => StatsScreen(widget._retrievedData)));
       });
   }
 }
